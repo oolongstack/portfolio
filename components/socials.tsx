@@ -29,13 +29,9 @@ interface SocialProps {
 function Social({ containerStyles, iconStyles }: SocialProps) {
   return (
     <div className={cn(containerStyles)}>
-      {socials.map((social) => {
+      {socials.map((social, index) => {
         return (
-          <Link
-            key={social?.path}
-            href={social!.path}
-            className={cn(iconStyles)}
-          >
+          <Link key={index} href={social!.path} className={cn(iconStyles)}>
             {social?.icon}
           </Link>
         );
